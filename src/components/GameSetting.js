@@ -21,6 +21,7 @@ function GameSetting(props) {
     setCurrentQuestionOrder,
     setGameDisplayStart,
     setOpenGameResultWindow,
+    setGameStart,
   } = props;
 
   const [userNameAlready, setUserNameAlready] = useState(false);
@@ -28,7 +29,7 @@ function GameSetting(props) {
     useState("placeholder");
   const [userCategoryChoice, setUserCategoryChoice] = useState("placeholder");
   const [userTypeChoice, setUserTypeChoice] = useState("placeholder");
-  const [existingUser, setExistingUser] = useState(false);
+  const [existingUser, setExistingUser] = useState("");
   const [questionsAndAnswersFromApi, setQuestionsAndAnswersFromApi] =
     useState("");
 
@@ -47,7 +48,7 @@ function GameSetting(props) {
   };
 
   const ExistingUserClick = () => {
-    setExistingUser(false);
+    setExistingUser("false");
   };
 
   useEffect(() => {
@@ -87,7 +88,6 @@ function GameSetting(props) {
       alert(`Please enter your user name!`);
     } else {
       setUserNameAlready(true);
-      console.log(userName);
     }
   };
 
@@ -111,15 +111,15 @@ function GameSetting(props) {
         const data = response.val();
         const dataConvertToArray = Object.keys(data);
         if (String(dataConvertToArray).indexOf(userName) !== -1) {
-          setExistingUser(true);
+          setExistingUser("true");
           if (continueGame) {
             // Pass existing data to GameDisplay.js
-            console.log(data);
-            console.log(data[userName]);
             setUserQuestions(data[userName].questions);
             setUserCorrectNumber(data[userName].correctNumber);
             setUserAnsweredNumber(data[userName].answeredNumber);
           }
+        } else {
+          setExistingUser("false");
         }
       });
     }
@@ -133,7 +133,7 @@ function GameSetting(props) {
   ]);
 
   useEffect(() => {
-    if (questionSettingAlready && !existingUser) {
+    if (questionSettingAlready && existingUser === "false") {
       const triviaGameUrl = `https://opentdb.com/api.php?amount=${userNumberChoice}&category=${userCategoryChoice}&difficulty=${userDifficultyChoice}&type=${userTypeChoice}`;
       axios({
         url: triviaGameUrl,
@@ -149,21 +149,18 @@ function GameSetting(props) {
           setQuestionSettingAlready(false);
           setGameDisplayStart(false);
           setOpenGameResultWindow(false);
-          setExistingUser(false);
+          setExistingUser("false");
           setUserNameAlready(true);
+          setGameStart(false);
         }
 
         if (questionsAndAnswersFromApi === "") {
           setQuestionsAndAnswersFromApi(response.data.results);
         }
-        if (!existingUser) {
+        if (existingUser === "false") {
           setUserQuestions(questionsAndAnswersFromApi);
         }
       });
-      console.log(questionsAndAnswersFromApi);
-      console.log(userTypeChoice);
-      console.log(userDifficultyChoice);
-      console.log(userCategoryChoice);
     }
   }, [
     userNumberChoice,
@@ -180,6 +177,7 @@ function GameSetting(props) {
     setCurrentQuestionOrder,
     setQuestionSettingAlready,
     setGameDisplayStart,
+    setGameStart,
     setOpenGameResultWindow,
   ]);
 
@@ -198,13 +196,14 @@ function GameSetting(props) {
           </form>
         ) : null}
         {questionsAndAnswersFromApi ? null : questionSettingAlready ? null : userNameAlready &&
-          existingUser ? (
+          existingUser === "true" ? (
           <div className="continueOrNewGame">
             <button onClick={ContinueGameClick}>Continue your game?</button>
             <button onClick={ExistingUserClick}>Start a new game!</button>
           </div>
         ) : null}
-        {questionSettingAlready ? null : !existingUser && userNameAlready ? (
+        {questionSettingAlready ? null : existingUser === "false" &&
+          userNameAlready ? (
           <div className="dropdownSettingSection">
             <form onSubmit={formSubmission}>
               {/* # of questions selected */}
@@ -215,7 +214,7 @@ function GameSetting(props) {
                 onChange={handleUserNumberChoice}
               >
                 <option value="placeholder" disabled>
-                  Choose # of ?'s:
+                  Question Number:
                 </option>
                 <option value="1">1</option>
                 <option value="3">3</option>
@@ -232,7 +231,7 @@ function GameSetting(props) {
                 onChange={handleUserCategoryChoice}
               >
                 <option value="placeholder" disabled>
-                  Choose your category:
+                  Question Category:
                 </option>
                 <option value="21">Sport</option>
                 <option value="9">General Knowledge</option>
@@ -250,7 +249,7 @@ function GameSetting(props) {
                 onChange={handleUserTypeChoice}
               >
                 <option value="placeholder" disabled>
-                  Choose your type:
+                  Question Type:
                 </option>
                 <option value="multiple">Multiple Choice</option>
                 <option value="boolean">True/False</option>
@@ -263,7 +262,7 @@ function GameSetting(props) {
                 onChange={handleUserDifficultyChoice}
               >
                 <option value="placeholder" disabled>
-                  Select difficulty:
+                  Question Difficulty:
                 </option>
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
