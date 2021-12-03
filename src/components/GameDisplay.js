@@ -1,7 +1,7 @@
-import "./styles.scss";
+import "../styles.scss";
 import QuestionDisplay from "./QuestionDisplay";
 import { useState, useEffect } from "react";
-import firebase from "./firebase";
+import firebase from "../firebase";
 
 function GameDisplay(props) {
   const {

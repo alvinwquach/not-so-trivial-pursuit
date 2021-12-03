@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./styles.scss";
+import "../styles.scss";
 import { Link } from "react-router-dom";
 
 function GameResult(props) {

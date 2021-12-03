@@ -1,11 +1,11 @@
 import "./styles.scss";
-import GameSetting from "./GameSetting";
+import GameSetting from "./components/GameSetting";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import GameDisplay from "./GameDisplay";
-import GameResult from "./GameResult";
+import GameDisplay from "./components/GameDisplay";
+import GameResult from "./components/GameResult";
 import LogoImage from "./images/logo.png";
-import Footer from "./Footer";
+import Footer from "./components/Footer";
 
 function App() {
   const [gameStart, setGameStart] = useState(false);
@@ -27,8 +27,6 @@ function App() {
     if (currentQuestionOrder === numberUserNumberChoice) {
       setOpenGameResultWindow(true);
     }
-    console.log("userAnsweredNumber" + currentQuestionOrder);
-    console.log("userNumberChoice" + userNumberChoice);
   }, [currentQuestionOrder, userNumberChoice, setOpenGameResultWindow]);
 
   const GameStartClick = () => {

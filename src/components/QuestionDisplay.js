@@ -1,9 +1,9 @@
-import "./styles.scss";
+import "../styles.scss";
 import { useState, useEffect } from "react";
-import LukeSkywalker from "./images/lukeSkywalker.png";
-import DarthMaul from "./images/darthMaul.png";
+import LukeSkywalker from "../images/lukeSkywalker.png";
+import DarthMaul from "../images/darthMaul.png";
 import useSound from "use-sound";
-import LightSaberAttackSound from "./audio/lightSaberAttack.mp3";
+import LightSaberAttackSound from "../audio/lightSaberAttack.mp3";
 
 function QuestionDisplay(props) {
   const {
