@@ -1,0 +1,61 @@
+footer {
+    position:absolute;
+    bottom:0;
+    width:100vw;
+    font-family: 'Press Start 2P', sans-serif;
+    text-align: center;
+    background-color:forestgreen;
+    height: 5vh;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 1920px;
+  
+    p {
+      margin-right: 30px;
+  
+      a{
+        text-decoration: none;
+        color:#d26121;
+  
+        &:hover {
+          color:#550e1b;
+        }
+        &:click {
+          color:#FFE500;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    footer {
+      font-size: 0.8rem;
+      height: 3vh;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    footer {
+      font-size: 0.8rem;
+      height: 5vh;
+  
+      span {
+        display: block;
+        margin-bottom: 5px;
+      }
+    }
+  }
+  
+  @media (max-width: 500px) {
+    footer {
+      height:6vh;
+      font-size: 0.6rem;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    footer {
+      height:8vh;
+      font-size: 0.5rem;
+    }
+  }

@@ -1,0 +1,184 @@
+.animationContainer{
+    position:relative;
+  
+    .darthMaul {
+      height: 100px;
+      position: absolute;
+      bottom: 15%;
+      left: 10%;
+    }
+  
+    .lukeSkywalker {
+      height: 138px;
+      position: absolute;
+      bottom: 0%;
+      right:10%;
+    }
+  
+    .lukeWondarthMaul {
+      animation:maulIsAttack 2s linear;
+    }
+  
+    @keyframes maulIsAttack {
+      55% { bottom: 15%; left: 10%;transform:rotate(0);   filter:sepia(0);}
+      60% {bottom: 10%; left: 5%;transform:rotate(-45deg); filter:sepia(100%);}
+      100% { bottom: 15%; left: 10%;transform:rotate(0);  filter:sepia(0);}
+    }
+  
+    .lukeWondarthLuke {
+      bottom: 0%;
+      right:10%;
+      animation:lukeAttack 2s linear;
+    }
+  
+    @keyframes lukeAttack {
+      0% { bottom: 0%; right:10%; transform:rotate(0);}
+      5% {bottom: 9%; right:14%; transform:rotate(5deg);}
+      10% {bottom: 17%; right:19%;transform:rotate(10deg);}
+      15% {bottom: 23%; right:23%;transform:rotate(15deg);}
+      20% {bottom: 27%; right:28%; transform:rotate(20deg);}
+      25% {bottom: 29%; right:33%;transform:rotate(25deg);}
+      30% {bottom: 30%; right:38%; transform:rotate(30deg);}
+      35% {bottom: 29%; right:42%;transform:rotate(35deg);}
+      40% {bottom: 27%; right:47%;transform:rotate(40deg);}
+      45% {bottom: 23%; right:51%;transform:rotate(45deg);}
+      50% {bottom: 17%; right:56%;transform:rotate(15);}
+      55%{bottom: 9%; right:60%;transform:rotate(-15deg);}
+      60%{bottom: 0%; right:65%;transform:rotate(-45deg);}
+      100% {bottom: 0%; right:10%; transform:rotate(0);}
+    }
+  
+    .maulWondarthMaul{
+      bottom: 15%;
+      left: 10%;
+      animation:maulAttack 2s linear;
+    }
+  
+    @keyframes maulAttack {
+      0% { bottom: 15%; left:10%; transform:rotate(0);}
+      5% {bottom: 24%; left:14%; transform:rotate(-5deg);}
+      10% {bottom: 32%; left:19%;transform:rotate(-10deg);}
+      15% {bottom: 38%; left:23%;transform:rotate(-15deg);}
+      20% {bottom: 42%; left:28%; transform:rotate(-20deg);}
+      25% {bottom: 44%; left:33%;transform:rotate(-25deg);}
+      30% {bottom: 45%; left:38%; transform:rotate(-30deg);}
+      35% {bottom: 44%; left:42%;transform:rotate(-35deg);}
+      40% {bottom: 42%; left:47%;transform:rotate(-40deg);}
+      45% {bottom: 38%; left:51%;transform:rotate(-45deg);}
+      50% {bottom: 32%; left:56%;transform:rotate(-15deg);}
+      55%{bottom: 24%; left:60%;transform:rotate(15deg);}
+      60%{bottom: 15%; left:65%;transform:rotate(45deg);}
+      100% {bottom:15%; left:10%; transform:rotate(0);}
+    }
+  
+    .maulWondarthLuke {
+      animation:lukeIsAttack 2s linear;
+    }
+  
+    @keyframes lukeIsAttack {
+      55% { bottom: 0%; right:10%;transform:rotate(0);   filter:sepia(0);}
+      60% {bottom: 5%; right:5%;transform:rotate(45deg); filter:sepia(100%);}
+      100% { bottom: 0%; right:10%;transform:rotate(0);  filter:sepia(0);}
+    }
+  }
+  
+  .questionContainer{
+    display:grid;
+  
+    .questionText {
+      font-family: 'Press Start 2P', serif;
+      font-size: 1.5rem;
+      text-align: center;
+      line-height: 1.5;
+      padding: 0 15px;
+  }
+  
+    .buttonAnswer {
+      border-radius: 10px;
+      text-transform: uppercase;
+      margin: 10px;
+      padding: 5px;
+      color: black;
+      background-color: rgba(247, 245, 223, 0.384);
+    
+      &:hover {
+        color: forestgreen;
+        cursor: pointer;
+        z-index: 1;
+      }
+    }
+  }
+  
+  @media(max-width: 1024px) {
+    .questionContainer{
+      .questionText {
+        font-size: 1.4rem;
+      }
+    }
+  }
+  
+  @media(max-width: 768px) {
+    .questionContainer{
+      .questionText {
+        font-size: 1.3rem;
+      }
+    }
+  }
+  
+  @media(max-width: 600px) {
+    .questionContainer{
+      .questionText {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  
+  @media(max-width: 500px) {
+    .darthMaul {
+      height: 70px;
+    }
+  
+    .lukeSkywalker {
+      height: 97px;
+    }
+    .questionContainer{
+      .questionText {
+        font-size: 1rem;
+      }
+    
+      .buttonAnswer {
+      font-size:0.8rem;
+      }
+    }
+  }
+  
+  @media(max-width: 375px) {
+    .darthMaul {
+      height: 56px;
+    }
+  
+    .lukeSkywalker {
+      height: 78px;
+    }
+  
+    .questionContainer{
+      .questionText {
+        font-size: 0.8rem;
+      }
+    
+      .buttonAnswer {
+      font-size:0.7rem;
+      }
+    }
+  }
+  
+  @media(max-width: 320px) {
+    .darthMaul {
+      height: 45px;
+    }
+  
+    .lukeSkywalker {
+      height: 62px;
+    }
+  }
+  

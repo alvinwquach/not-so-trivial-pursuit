@@ -1,0 +1,285 @@
+@import "./styles/normalize";
+@import "./styles/GameDisplay";
+@import "./styles/GameSetting";
+@import "./styles/GameResult";
+@import "./styles/QuestionDisplay";
+@import "./styles/footer";
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Lato&family=Press+Start+2P&display=swap');
+
+html {
+  margin: 0 auto;
+  max-width: 1920px;
+  max-height: 1366px;
+}
+
+.App {
+  font-family: 'Press Start 2P', sans-serif;
+  background-image: url("./images/Space-Backgrounds-Wallpaper-Cave.gif");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0 auto;
+  max-width: 1920px;
+  max-height: 1366px;
+  font-size: 125%;
+
+  button {
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-top: 25px;
+    margin: 5px;
+    width: 25%;
+    letter-spacing: 1px;
+    line-height: 1.5rem;
+    background-color: #8DAA91;
+    text-transform: uppercase;
+    position: absolute;
+    cursor: pointer;
+
+    &:hover {
+      color: #F8F4A6;
+      cursor: pointer;
+    }
+
+    &:active {
+      color: #550e1b;
+    }
+  }
+}
+
+/*saved colors*/
+button {
+  // color: #ffe500;
+  color:black;
+  font-family: 'Press Start 2P';
+}
+
+p {
+ color:black;
+}
+
+h1 {
+  color: #550e1b;
+}
+
+.formOne select {
+  font-family: Lato;
+  color: #d26121;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  margin: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.logoImage {
+  position: absolute;
+  width: 800px;
+  top: 0;
+  left: calc(50vw - 400px);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: 2px solid #8DAA91;
+}
+
+.logoHide {
+  top: -188px;
+  opacity: 0;
+  animation: 1s linear hidingLogo;
+}
+
+@keyframes hidingLogo {
+  0% {opacity: 1; top: 0;}
+  30% {opacity: 0.7; top: 20px;}
+  100% {opacity: 0; top: -188px; }
+}
+
+.App .gameStartButton,
+.App .triviaGameStartbutton {
+  position: absolute;
+  top : calc(50vh - 65px);
+  left:calc(50vw - 225px);
+  line-height: 2.5rem;
+  font-size: 2rem;
+  height: 130px;
+  width: 450px;
+}
+
+.App nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  div {
+    position:relative;
+    display:flex;
+    width: 350px;
+
+    button {
+      margin: 1vh 1vw;
+      position: static;
+    }
+
+    .homePageButton {
+      width: 120px;
+    }
+
+    .resultPageButton {
+      width: 170px;
+    }
+  }
+}
+
+//For super big screen
+@media (min-width:1920px) {
+  .logoImage {
+    left: calc(960px - 400px);
+  }
+
+  .App .gameStartButton,
+  .App .triviaGameStartbutton {
+    left:calc(960px - 225px);
+  }
+}
+
+@media (max-width: 1440px) {
+  .logoImage {
+    width: 600px;
+    
+    left: calc(50vw - 300px);
+  }
+
+  .App nav {
+    div {
+      width: 320px;
+    }
+  }
+}
+
+@media (max-width: 1024px)  {
+  .App {
+  background-position-x: 65%;
+  }
+  .App nav {
+    div {
+      flex-direction: column;
+      align-items: flex-end;
+      width: 200px;
+    }
+  }
+}
+
+@media (max-width:962px) {
+  .logoImage {
+    width: 500px;
+    
+    left: calc(50vw - 250px);
+  }
+}
+
+@media (max-width:820px) {
+  .App nav {
+    top: 120px;
+  }
+
+.App .movingNav {
+    top: 0;
+    animation: 1s linear movingNav;
+  }
+
+  @keyframes movingNav {
+    0% { top: 120px;}
+    30% {top: 140px;}
+    100% {top:0;}
+  }
+}
+
+@media(max-width: 500px) {
+  .App .gameStartButton,
+  .App .triviaGameStartbutton {
+    top : calc(50vh - 50px);
+    left:calc(50vw - 175px);
+    font-size: 1.5rem;
+    height: 100px;
+    width: 350px;
+  }
+
+  .logoImage {
+    width: 100%;
+    left:0;
+  }
+
+  .App nav {
+    display:none;
+    opacity:0;
+    div {
+      flex-direction:row;
+      align-items: flex-end;
+      width: 300px;
+      
+      .homePageButton,
+      .resultPageButton{
+       font-size:1.2rem;
+      }
+    }
+  }
+
+  .App .movingNav {
+    display:block;
+    opacity: 1;
+    top: 0;
+    animation: 1s linear movingNav;
+  }
+
+  @keyframes movingNav {
+    0% { top: 120px;display:none;opacity:0;}
+    1% {top: 120px;display:block; opacity:0;}
+    30% {top: 140px; display:block; opacity:0.3;}
+    100% {top:0;display:block; opacity:1;}
+  }
+}
+
+@media(max-width: 450px) {
+  .App .gameStartButton,
+  .App .triviaGameStartbutton {
+    left:calc(50vw - 150px);
+    font-size: 1.2rem;
+    width: 300px;
+  }
+
+  .App nav {
+    div {
+      width: 250px;
+      .homePageButton {
+        width: 100px;
+       font-size:1rem;
+      }
+      .resultPageButton{
+        width: 150px;
+       font-size:1rem;
+      }
+    }
+  }
+}
+
+@media(max-width: 375px) {
+  .App nav {
+    div {
+      width: 200px;
+      .homePageButton {
+        width: 80px;
+       font-size:0.8rem;
+      }
+      .resultPageButton{
+        width: 120px;
+       font-size:0.8rem;
+      }
+    }
+  }
+}
+

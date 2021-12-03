@@ -1,0 +1,304 @@
+.userNameInputForm {
+    position:absolute;
+    top:calc(50vh - 50px);
+    left: calc(50vw - 350px);
+    font-family: 'Press Start 2P', sans-serif;
+    background-color:#8DAA91;
+    border-radius: 10px;
+    border:2px outset;
+    font-size: 1.2rem;
+    width: 700px;
+    text-align: center;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+    div {
+      display:flex;
+      width: 90%;
+      margin: 10px auto 0;
+  
+      button{
+        border-radius: 10px;
+        font-size: 1.2rem;
+        padding: 0.3rem;
+        margin-left: 10px;
+        background-color:lightgray;
+      }
+  
+      input {
+        font-family: 'Press Start 2P', sans-serif;
+        border-radius: 10px;
+        font-size: 1.3rem;
+        flex: 1;
+        text-align: center;
+      }
+    }
+  }
+  
+  .userNameInputForm button {
+    &:hover {
+      color: #F8F4A6;
+      cursor: pointer;
+    }
+  
+    &:active {
+      color: #550e1b;
+    }
+  }
+  
+  .continueOrNewGame{
+    position: absolute;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    top: calc(50vh - 75px);
+    left: calc(50vw - 250px);
+    height:150px;
+    width: 500px;
+    border-radius: 10px;
+    background-color:#8DAA91;
+    border:2px outset;
+  
+    button{
+      margin: 10px 20px;
+      border-radius: 10px;
+      font-size:1.2rem;
+      padding: 0.3rem;
+      background-color:lightgray;
+  
+      &:hover {
+        color: #F8F4A6;
+        cursor: pointer;
+      }
+    
+      &:active {
+        color: #550e1b;
+      }
+    }
+  }
+  
+  .dropdownSettingSection {
+    position: absolute;
+    top: calc(50vh - 150px);
+    left: calc(50vw - 300px);
+    border-radius: 10px;
+    height: 300px;
+    width:600px;
+    background-color: lightgray;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border:2px outset;
+  
+    form {
+      display:flex;
+      flex-direction: column;
+      width: 90%;
+      justify-content: center;
+      margin: 10px auto;
+  
+        select {
+          border: 1px solid var(--select-border);
+          border-radius: 0.25em;
+          padding: 0.25em 0.5em;
+          font-size: 1.2rem;
+          padding-left: 1rem;
+          margin-bottom:1rem;
+          font-family: 'Press Start 2P', sans-serif;
+          cursor: pointer;
+          line-height: 1.1;
+          color: black;
+          background-color:lightgrey;
+          background-image: linear-gradient(to top,#8DAA91, rgb(194, 183, 183) 33%);
+          display: grid;
+          grid-template-areas: "select";
+          flex:1;
+          -moz-appearance: none;
+          -webkit-appearance: none;
+        }
+  
+      select,
+      .select:after {
+        grid-area: select;
+      }
+  
+      .select::after {
+        content: "";
+        width: 0.8em;
+        height: 0.5em;
+        background-color: var(--select-arrow);
+        clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+      }
+    }
+    button {
+      width: 90%;
+      //margin: 0 auto 10px;
+      margin: 0 auto 15px;
+      border-radius: 5px;
+      font-size:1.2rem;
+      padding: 0.1rem;
+      //padding: 0.3rem;
+      padding-top: 5px;
+      background-color:#8DAA91;
+  
+      &:hover {
+        color: #F8F4A6;
+        cursor: pointer;
+      }
+    
+      &:active {
+        color: #550e1b;
+      }
+    }
+  }
+  //For super big screen
+  @media (min-width:1920px){
+    .userNameInputForm {
+      left: calc(960px - 350px);
+    }
+  
+    .continueOrNewGame{
+      left: calc(960px - 250px);
+    }
+  
+    .dropdownSettingSection {
+      left: calc(960px - 300px);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .userNameInputForm {
+      left: calc(50vw - 300px);
+      width: 600px;
+      height: 120px;
+      
+      div {
+        button{
+          width: 30%;
+        }
+    
+        input {
+          width: 70%;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .userNameInputForm {
+      left: calc(50vw - 45%);
+      width: 90%;
+      height: 120px;
+      font-size: 1rem;
+      
+      div {
+        button{
+          font-size:1rem;
+          width: 30%;
+        }
+    
+        input {
+          font-size:1rem;
+          width: 70%;
+        }
+      }
+    }
+  
+    .dropdownSettingSection {
+      left: calc(50vw - 45%);
+      width:90%;
+      height: 250px;
+      top: calc(50vh - 125px);
+  
+      form {
+        select {
+          font-size: 1rem;
+        }
+      }
+      button {
+        font-size:1rem;
+      }
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .userNameInputForm {
+      div {
+        button{
+          width: 40%;
+        }
+    
+        input {
+          width: 60%;
+        }
+      }
+    }
+  
+    .continueOrNewGame{
+      left: calc(50vw - 45%);
+      width: 90%;
+    }
+  }
+  
+  @media(max-width: 450px) {
+    .continueOrNewGame{
+      button {
+        font-size:1rem;
+      }
+    }
+  
+    .dropdownSettingSection {
+      width:100%;
+      left:0;
+      height: 200px;
+      top: calc(50vh - 100px);
+  
+      form {
+        select {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+  
+  @media(max-width: 375px) {
+    .continueOrNewGame{
+      button {
+        font-size:0.8rem;
+      }
+    }
+  
+    form {
+      button {
+        font-size: 0.8rem;
+      }
+    }
+  
+    .userNameInputForm {
+      font-size: 0.8rem;
+      
+      div {
+        button{
+          font-size:0.8rem;
+        }
+    
+        input {
+          font-size:0.8rem;
+        }
+      }
+    }
+  
+    .dropdownSettingSection {
+      height: 250px;
+      top: calc(50vh - 125px);
+  
+      form {
+        select {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+  

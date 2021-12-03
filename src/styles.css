@@ -1,0 +1,1458 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Lato&family=Press+Start+2P&display=swap");
+html {
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+article, aside, footer, header, nav, section {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+figcaption, figure, main {
+  display: block;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+b, strong {
+  font-weight: inherit;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+code, kbd, samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+audio, video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+img {
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, html [type=button], [type=reset], [type=submit] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=checkbox], [type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+details, menu {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+canvas {
+  display: inline-block;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: "";
+  clear: both;
+  height: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.gameDisplay {
+  position: absolute;
+  height: 600px;
+  width: 800px;
+  top: calc(50vh - 300px);
+  left: calc(50vw - 400px);
+  font-family: Caveat Brush;
+  font-size: 1rem;
+  flex-shrink: 1;
+  background: linear-gradient(45deg, #550E1B, #D26121, #FFE500);
+  border-radius: 15px;
+  border: 3px outset;
+  display: grid;
+  grid-template-rows: 30% 70%;
+}
+.gameDisplay p {
+  font-size: 2.5rem;
+}
+
+@media (min-width: 1920px) {
+  .gameDisplay {
+    left: calc(960px - 400px);
+  }
+}
+@media (max-width: 820px) {
+  .gameDisplay {
+    width: 600px;
+    left: calc(50vw - 300px);
+  }
+}
+@media (max-width: 600px) {
+  .gameDisplay {
+    left: calc(50vw - 45%);
+    width: 90%;
+  }
+}
+@media (max-width: 375px) {
+  .gameDisplay {
+    left: 0;
+    width: 100%;
+    height: 70vh;
+    top: 15vh;
+  }
+}
+.userNameInputForm {
+  position: absolute;
+  top: calc(50vh - 50px);
+  left: calc(50vw - 350px);
+  font-family: "Press Start 2P", sans-serif;
+  background-color: #8DAA91;
+  border-radius: 10px;
+  border: 2px outset;
+  font-size: 1.2rem;
+  width: 700px;
+  text-align: center;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.userNameInputForm div {
+  display: flex;
+  width: 90%;
+  margin: 10px auto 0;
+}
+.userNameInputForm div button {
+  border-radius: 10px;
+  font-size: 1.2rem;
+  padding: 0.3rem;
+  margin-left: 10px;
+  background-color: lightgray;
+}
+.userNameInputForm div input {
+  font-family: "Press Start 2P", sans-serif;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  flex: 1;
+  text-align: center;
+}
+
+.userNameInputForm button:hover {
+  color: #F8F4A6;
+  cursor: pointer;
+}
+.userNameInputForm button:active {
+  color: #550e1b;
+}
+
+.continueOrNewGame {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: calc(50vh - 75px);
+  left: calc(50vw - 250px);
+  height: 150px;
+  width: 500px;
+  border-radius: 10px;
+  background-color: #8DAA91;
+  border: 2px outset;
+}
+.continueOrNewGame button {
+  margin: 10px 20px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  padding: 0.3rem;
+  background-color: lightgray;
+}
+.continueOrNewGame button:hover {
+  color: #F8F4A6;
+  cursor: pointer;
+}
+.continueOrNewGame button:active {
+  color: #550e1b;
+}
+
+.dropdownSettingSection {
+  position: absolute;
+  top: calc(50vh - 150px);
+  left: calc(50vw - 300px);
+  border-radius: 10px;
+  height: 300px;
+  width: 600px;
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px outset;
+}
+.dropdownSettingSection form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  justify-content: center;
+  margin: 10px auto;
+}
+.dropdownSettingSection form select {
+  border: 1px solid var(--select-border);
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  font-family: "Press Start 2P", sans-serif;
+  cursor: pointer;
+  line-height: 1.1;
+  color: black;
+  background-color: lightgrey;
+  background-image: linear-gradient(to top, #8DAA91, #c2b7b7 33%);
+  display: grid;
+  grid-template-areas: "select";
+  flex: 1;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+.dropdownSettingSection form select,
+.dropdownSettingSection form .select:after {
+  grid-area: select;
+}
+.dropdownSettingSection form .select::after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  background-color: var(--select-arrow);
+  -webkit-clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+          clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+.dropdownSettingSection button {
+  width: 90%;
+  margin: 0 auto 15px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  padding: 0.1rem;
+  padding-top: 5px;
+  background-color: #8DAA91;
+}
+.dropdownSettingSection button:hover {
+  color: #F8F4A6;
+  cursor: pointer;
+}
+.dropdownSettingSection button:active {
+  color: #550e1b;
+}
+
+@media (min-width: 1920px) {
+  .userNameInputForm {
+    left: calc(960px - 350px);
+  }
+
+  .continueOrNewGame {
+    left: calc(960px - 250px);
+  }
+
+  .dropdownSettingSection {
+    left: calc(960px - 300px);
+  }
+}
+@media (max-width: 768px) {
+  .userNameInputForm {
+    left: calc(50vw - 300px);
+    width: 600px;
+    height: 120px;
+  }
+  .userNameInputForm div button {
+    width: 30%;
+  }
+  .userNameInputForm div input {
+    width: 70%;
+  }
+}
+@media (max-width: 600px) {
+  .userNameInputForm {
+    left: calc(50vw - 45%);
+    width: 90%;
+    height: 120px;
+    font-size: 1rem;
+  }
+  .userNameInputForm div button {
+    font-size: 1rem;
+    width: 30%;
+  }
+  .userNameInputForm div input {
+    font-size: 1rem;
+    width: 70%;
+  }
+
+  .dropdownSettingSection {
+    left: calc(50vw - 45%);
+    width: 90%;
+    height: 250px;
+    top: calc(50vh - 125px);
+  }
+  .dropdownSettingSection form select {
+    font-size: 1rem;
+  }
+  .dropdownSettingSection button {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .userNameInputForm div button {
+    width: 40%;
+  }
+  .userNameInputForm div input {
+    width: 60%;
+  }
+
+  .continueOrNewGame {
+    left: calc(50vw - 45%);
+    width: 90%;
+  }
+}
+@media (max-width: 450px) {
+  .continueOrNewGame button {
+    font-size: 1rem;
+  }
+
+  .dropdownSettingSection {
+    width: 100%;
+    left: 0;
+    height: 200px;
+    top: calc(50vh - 100px);
+  }
+  .dropdownSettingSection form select {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 375px) {
+  .continueOrNewGame button {
+    font-size: 0.8rem;
+  }
+
+  form button {
+    font-size: 0.8rem;
+  }
+
+  .userNameInputForm {
+    font-size: 0.8rem;
+  }
+  .userNameInputForm div button {
+    font-size: 0.8rem;
+  }
+  .userNameInputForm div input {
+    font-size: 0.8rem;
+  }
+
+  .dropdownSettingSection {
+    height: 250px;
+    top: calc(50vh - 125px);
+  }
+  .dropdownSettingSection form select {
+    font-size: 0.8rem;
+  }
+}
+.resultSection {
+  position: absolute;
+  height: 200px;
+  width: 500px;
+  top: calc(50vh - 100px);
+  left: calc(50vw - 250px);
+  background-color: #8DAA91;
+  border-radius: 20px;
+  border: 2px outset;
+  font-family: "Press Start 2P", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  z-index: 1;
+}
+.resultSection p {
+  margin: 0.5rem;
+}
+.resultSection a {
+  margin-top: 20px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+}
+.resultSection .resultUserName, .resultSection span {
+  color: #d26121;
+}
+.resultSection .quitButton {
+  align-self: center;
+  border-radius: 5px;
+  background-color: lightgray;
+  width: 400px;
+}
+.resultSection .quitButton:hover {
+  color: #F8F4A6;
+  cursor: pointer;
+}
+.resultSection .quitButton:active {
+  color: #550e1b;
+}
+
+@media (min-width: 1920px) {
+  .resultSection {
+    left: calc(960px - 250px);
+  }
+}
+@media (max-width: 500px) {
+  .resultSection {
+    width: 90%;
+    left: calc(50vw - 45%);
+    font-size: 1rem;
+  }
+  .resultSection .quitButton {
+    font-size: 0.8rem;
+    width: 240px;
+  }
+}
+.animationContainer {
+  position: relative;
+}
+.animationContainer .darthMaul {
+  height: 100px;
+  position: absolute;
+  bottom: 15%;
+  left: 10%;
+}
+.animationContainer .lukeSkywalker {
+  height: 138px;
+  position: absolute;
+  bottom: 0%;
+  right: 10%;
+}
+.animationContainer .lukeWondarthMaul {
+  -webkit-animation: maulIsAttack 2s linear;
+          animation: maulIsAttack 2s linear;
+}
+@-webkit-keyframes maulIsAttack {
+  55% {
+    bottom: 15%;
+    left: 10%;
+    transform: rotate(0);
+    filter: sepia(0);
+  }
+  60% {
+    bottom: 10%;
+    left: 5%;
+    transform: rotate(-45deg);
+    filter: sepia(100%);
+  }
+  100% {
+    bottom: 15%;
+    left: 10%;
+    transform: rotate(0);
+    filter: sepia(0);
+  }
+}
+@keyframes maulIsAttack {
+  55% {
+    bottom: 15%;
+    left: 10%;
+    transform: rotate(0);
+    filter: sepia(0);
+  }
+  60% {
+    bottom: 10%;
+    left: 5%;
+    transform: rotate(-45deg);
+    filter: sepia(100%);
+  }
+  100% {
+    bottom: 15%;
+    left: 10%;
+    transform: rotate(0);
+    filter: sepia(0);
+  }
+}
+.animationContainer .lukeWondarthLuke {
+  bottom: 0%;
+  right: 10%;
+  -webkit-animation: lukeAttack 2s linear;
+          animation: lukeAttack 2s linear;
+}
+@-webkit-keyframes lukeAttack {
+  0% {
+    bottom: 0%;
+    right: 10%;
+    transform: rotate(0);
+  }
+  5% {
+    bottom: 9%;
+    right: 14%;
+    transform: rotate(5deg);
+  }
+  10% {
+    bottom: 17%;
+    right: 19%;
+    transform: rotate(10deg);
+  }
+  15% {
+    bottom: 23%;
+    right: 23%;
+    transform: rotate(15deg);
+  }
+  20% {
+    bottom: 27%;
+    right: 28%;
+    transform: rotate(20deg);
+  }
+  25% {
+    bottom: 29%;
+    right: 33%;
+    transform: rotate(25deg);
+  }
+  30% {
+    bottom: 30%;
+    right: 38%;
+    transform: rotate(30deg);
+  }
+  35% {
+    bottom: 29%;
+    right: 42%;
+    transform: rotate(35deg);
+  }
+  40% {
+    bottom: 27%;
+    right: 47%;
+    transform: rotate(40deg);
+  }
+  45% {
+    bottom: 23%;
+    right: 51%;
+    transform: rotate(45deg);
+  }
+  50% {
+    bottom: 17%;
+    right: 56%;
+    transform: rotate(15);
+  }
+  55% {
+    bottom: 9%;
+    right: 60%;
+    transform: rotate(-15deg);
+  }
+  60% {
+    bottom: 0%;
+    right: 65%;
+    transform: rotate(-45deg);
+  }
+  100% {
+    bottom: 0%;
+    right: 10%;
+    transform: rotate(0);
+  }
+}
+@keyframes lukeAttack {
+  0% {
+    bottom: 0%;
+    right: 10%;
+    transform: rotate(0);
+  }
+  5% {
+    bottom: 9%;
+    right: 14%;
+    transform: rotate(5deg);
+  }
+  10% {
+    bottom: 17%;
+    right: 19%;
+    transform: rotate(10deg);
+  }
+  15% {
+    bottom: 23%;
+    right: 23%;
+    transform: rotate(15deg);
+  }
+  20% {
+    bottom: 27%;
+    right: 28%;
+    transform: rotate(20deg);
+  }
+  25% {
+    bottom: 29%;
+    right: 33%;
+    transform: rotate(25deg);
+  }
+  30% {
+    bottom: 30%;
+    right: 38%;
+    transform: rotate(30deg);
+  }
+  35% {
+    bottom: 29%;
+    right: 42%;
+    transform: rotate(35deg);
+  }
+  40% {
+    bottom: 27%;
+    right: 47%;
+    transform: rotate(40deg);
+  }
+  45% {
+    bottom: 23%;
+    right: 51%;
+    transform: rotate(45deg);
+  }
+  50% {
+    bottom: 17%;
+    right: 56%;
+    transform: rotate(15);
+  }
+  55% {
+    bottom: 9%;
+    right: 60%;
+    transform: rotate(-15deg);
+  }
+  60% {
+    bottom: 0%;
+    right: 65%;
+    transform: rotate(-45deg);
+  }
+  100% {
+    bottom: 0%;
+    right: 10%;
+    transform: rotate(0);
+  }
+}
+.animationContainer .maulWondarthMaul {
+  bottom: 15%;
+  left: 10%;
+  -webkit-animation: maulAttack 2s linear;
+          animation: maulAttack 2s linear;
+}
+@-webkit-keyframes maulAttack {
+  0% {
+    bottom: 15%;
+    left: 10%;
+    transform: rotate(0);
+  }
+  5% {
+    bottom: 24%;
+    left: 14%;
+    transform: rotate(-5deg);
+  }
+  10% {
+    bottom: 32%;
+    left: 19%;
+    transform: rotate(-10deg);
+  }
+  15% {
+    bottom: 38%;
+    left: 23%;
+    transform: rotate(-15deg);
+  }
+  20% {
+    bottom: 42%;
+    left: 28%;
+    transform: rotate(-20deg);
+  }
+  25% {
+    bottom: 44%;
+    left: 33%;
+    transform: rotate(-25deg);
+  }
+  30% {
+    bottom: 45%;
+    left: 38%;
+    transform: rotate(-30deg);
+  }
+  35% {
+    bottom: 44%;
+    left: 42%;
+    transform: rotate(-35deg);
+  }
+  40% {
+    bottom: 42%;
+    left: 47%;
+    transform: rotate(-40deg);
+  }
+  45% {
+    bottom: 38%;
+    left: 51%;
+    transform: rotate(-45deg);
+  }
+  50% {
+    bottom: 32%;
+    left: 56%;
+    transform: rotate(-15deg);
+  }
+  55% {
+    bottom: 24%;
+    left: 60%;
+    transform: rotate(15deg);
+  }
+  60% {
+    bottom: 15%;
+    left: 65%;
+    transform: rotate(45deg);
+  }
+  100% {
+    bottom: 15%;
+    left: 10%;
+    transform: rotate(0);
+  }
+}
+@keyframes maulAttack {
+  0% {
+    bottom: 15%;
+    left: 10%;
+    transform: rotate(0);
+  }
+  5% {
+    bottom: 24%;
+    left: 14%;
+    transform: rotate(-5deg);
+  }
+  10% {
+    bottom: 32%;
+    left: 19%;
+    transform: rotate(-10deg);
+  }
+  15% {
+    bottom: 38%;
+    left: 23%;
+    transform: rotate(-15deg);
+  }
+  20% {
+    bottom: 42%;
+    left: 28%;
+    transform: rotate(-20deg);
+  }
+  25% {
+    bottom: 44%;
+    left: 33%;
+    transform: rotate(-25deg);
+  }
+  30% {
+    bottom: 45%;
+    left: 38%;
+    transform: rotate(-30deg);
+  }
+  35% {
+    bottom: 44%;
+    left: 42%;
+    transform: rotate(-35deg);
+  }
+  40% {
+    bottom: 42%;
+    left: 47%;
+    transform: rotate(-40deg);
+  }
+  45% {
+    bottom: 38%;
+    left: 51%;
+    transform: rotate(-45deg);
+  }
+  50% {
+    bottom: 32%;
+    left: 56%;
+    transform: rotate(-15deg);
+  }
+  55% {
+    bottom: 24%;
+    left: 60%;
+    transform: rotate(15deg);
+  }
+  60% {
+    bottom: 15%;
+    left: 65%;
+    transform: rotate(45deg);
+  }
+  100% {
+    bottom: 15%;
+    left: 10%;
+    transform: rotate(0);
+  }
+}
+.animationContainer .maulWondarthLuke {
+  -webkit-animation: lukeIsAttack 2s linear;
+          animation: lukeIsAttack 2s linear;
+}
+@-webkit-keyframes lukeIsAttack {
+  55% {
+    bottom: 0%;
+    right: 10%;
+    transform: rotate(0);
+    filter: sepia(0);
+  }
+  60% {
+    bottom: 5%;
+    right: 5%;
+    transform: rotate(45deg);
+    filter: sepia(100%);
+  }
+  100% {
+    bottom: 0%;
+    right: 10%;
+    transform: rotate(0);
+    filter: sepia(0);
+  }
+}
+@keyframes lukeIsAttack {
+  55% {
+    bottom: 0%;
+    right: 10%;
+    transform: rotate(0);
+    filter: sepia(0);
+  }
+  60% {
+    bottom: 5%;
+    right: 5%;
+    transform: rotate(45deg);
+    filter: sepia(100%);
+  }
+  100% {
+    bottom: 0%;
+    right: 10%;
+    transform: rotate(0);
+    filter: sepia(0);
+  }
+}
+
+.questionContainer {
+  display: grid;
+}
+.questionContainer .questionText {
+  font-family: "Press Start 2P", serif;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 1.5;
+  padding: 0 15px;
+}
+.questionContainer .buttonAnswer {
+  border-radius: 10px;
+  text-transform: uppercase;
+  margin: 10px;
+  padding: 5px;
+  color: black;
+  background-color: rgba(247, 245, 223, 0.384);
+}
+.questionContainer .buttonAnswer:hover {
+  color: forestgreen;
+  cursor: pointer;
+  z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .questionContainer .questionText {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 768px) {
+  .questionContainer .questionText {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 600px) {
+  .questionContainer .questionText {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 500px) {
+  .darthMaul {
+    height: 70px;
+  }
+
+  .lukeSkywalker {
+    height: 97px;
+  }
+
+  .questionContainer .questionText {
+    font-size: 1rem;
+  }
+  .questionContainer .buttonAnswer {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 375px) {
+  .darthMaul {
+    height: 56px;
+  }
+
+  .lukeSkywalker {
+    height: 78px;
+  }
+
+  .questionContainer .questionText {
+    font-size: 0.8rem;
+  }
+  .questionContainer .buttonAnswer {
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 320px) {
+  .darthMaul {
+    height: 45px;
+  }
+
+  .lukeSkywalker {
+    height: 62px;
+  }
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  font-family: "Press Start 2P", sans-serif;
+  text-align: center;
+  background-color: forestgreen;
+  height: 5vh;
+  display: flex;
+  justify-content: flex-end;
+  max-width: 1920px;
+}
+footer p {
+  margin-right: 30px;
+}
+footer p a {
+  text-decoration: none;
+  color: #d26121;
+}
+footer p a:hover {
+  color: #550e1b;
+}
+footer p a:click {
+  color: #FFE500;
+}
+
+@media (max-width: 1024px) {
+  footer {
+    font-size: 0.8rem;
+    height: 3vh;
+  }
+}
+@media (max-width: 768px) {
+  footer {
+    font-size: 0.8rem;
+    height: 5vh;
+  }
+  footer span {
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+@media (max-width: 500px) {
+  footer {
+    height: 6vh;
+    font-size: 0.6rem;
+  }
+}
+@media (max-width: 375px) {
+  footer {
+    height: 8vh;
+    font-size: 0.5rem;
+  }
+}
+html {
+  margin: 0 auto;
+  max-width: 1920px;
+  max-height: 1366px;
+}
+
+.App {
+  font-family: "Press Start 2P", sans-serif;
+  background-image: url("./images/Space-Backgrounds-Wallpaper-Cave.gif");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0 auto;
+  max-width: 1920px;
+  max-height: 1366px;
+  font-size: 125%;
+}
+.App button {
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin-top: 25px;
+  margin: 5px;
+  width: 25%;
+  letter-spacing: 1px;
+  line-height: 1.5rem;
+  background-color: #8DAA91;
+  text-transform: uppercase;
+  position: absolute;
+  cursor: pointer;
+}
+.App button:hover {
+  color: #F8F4A6;
+  cursor: pointer;
+}
+.App button:active {
+  color: #550e1b;
+}
+
+/*saved colors*/
+button {
+  color: black;
+  font-family: "Press Start 2P";
+}
+
+p {
+  color: black;
+}
+
+h1 {
+  color: #550e1b;
+}
+
+.formOne select {
+  font-family: Lato;
+  color: #d26121;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  margin: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.logoImage {
+  position: absolute;
+  width: 800px;
+  top: 0;
+  left: calc(50vw - 400px);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border: 2px solid #8DAA91;
+}
+
+.logoHide {
+  top: -188px;
+  opacity: 0;
+  -webkit-animation: 1s linear hidingLogo;
+          animation: 1s linear hidingLogo;
+}
+
+@-webkit-keyframes hidingLogo {
+  0% {
+    opacity: 1;
+    top: 0;
+  }
+  30% {
+    opacity: 0.7;
+    top: 20px;
+  }
+  100% {
+    opacity: 0;
+    top: -188px;
+  }
+}
+
+@keyframes hidingLogo {
+  0% {
+    opacity: 1;
+    top: 0;
+  }
+  30% {
+    opacity: 0.7;
+    top: 20px;
+  }
+  100% {
+    opacity: 0;
+    top: -188px;
+  }
+}
+.App .gameStartButton,
+.App .triviaGameStartbutton {
+  position: absolute;
+  top: calc(50vh - 65px);
+  left: calc(50vw - 225px);
+  line-height: 2.5rem;
+  font-size: 2rem;
+  height: 130px;
+  width: 450px;
+}
+
+.App nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.App nav div {
+  position: relative;
+  display: flex;
+  width: 350px;
+}
+.App nav div button {
+  margin: 1vh 1vw;
+  position: static;
+}
+.App nav div .homePageButton {
+  width: 120px;
+}
+.App nav div .resultPageButton {
+  width: 170px;
+}
+
+@media (min-width: 1920px) {
+  .logoImage {
+    left: calc(960px - 400px);
+  }
+
+  .App .gameStartButton,
+.App .triviaGameStartbutton {
+    left: calc(960px - 225px);
+  }
+}
+@media (max-width: 1440px) {
+  .logoImage {
+    width: 600px;
+    left: calc(50vw - 300px);
+  }
+
+  .App nav div {
+    width: 320px;
+  }
+}
+@media (max-width: 1024px) {
+  .App {
+    background-position-x: 65%;
+  }
+
+  .App nav div {
+    flex-direction: column;
+    align-items: flex-end;
+    width: 200px;
+  }
+}
+@media (max-width: 962px) {
+  .logoImage {
+    width: 500px;
+    left: calc(50vw - 250px);
+  }
+}
+@media (max-width: 820px) {
+  .App nav {
+    top: 120px;
+  }
+
+  .App .movingNav {
+    top: 0;
+    -webkit-animation: 1s linear movingNav;
+            animation: 1s linear movingNav;
+  }
+
+  @-webkit-keyframes movingNav {
+    0% {
+      top: 120px;
+    }
+    30% {
+      top: 140px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+
+  @keyframes movingNav {
+    0% {
+      top: 120px;
+    }
+    30% {
+      top: 140px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .App .gameStartButton,
+.App .triviaGameStartbutton {
+    top: calc(50vh - 50px);
+    left: calc(50vw - 175px);
+    font-size: 1.5rem;
+    height: 100px;
+    width: 350px;
+  }
+
+  .logoImage {
+    width: 100%;
+    left: 0;
+  }
+
+  .App nav {
+    display: none;
+    opacity: 0;
+  }
+  .App nav div {
+    flex-direction: row;
+    align-items: flex-end;
+    width: 300px;
+  }
+  .App nav div .homePageButton,
+.App nav div .resultPageButton {
+    font-size: 1.2rem;
+  }
+
+  .App .movingNav {
+    display: block;
+    opacity: 1;
+    top: 0;
+    -webkit-animation: 1s linear movingNav;
+            animation: 1s linear movingNav;
+  }
+
+  @-webkit-keyframes movingNav {
+    0% {
+      top: 120px;
+      display: none;
+      opacity: 0;
+    }
+    1% {
+      top: 120px;
+      display: block;
+      opacity: 0;
+    }
+    30% {
+      top: 140px;
+      display: block;
+      opacity: 0.3;
+    }
+    100% {
+      top: 0;
+      display: block;
+      opacity: 1;
+    }
+  }
+
+  @keyframes movingNav {
+    0% {
+      top: 120px;
+      display: none;
+      opacity: 0;
+    }
+    1% {
+      top: 120px;
+      display: block;
+      opacity: 0;
+    }
+    30% {
+      top: 140px;
+      display: block;
+      opacity: 0.3;
+    }
+    100% {
+      top: 0;
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+@media (max-width: 450px) {
+  .App .gameStartButton,
+.App .triviaGameStartbutton {
+    left: calc(50vw - 150px);
+    font-size: 1.2rem;
+    width: 300px;
+  }
+
+  .App nav div {
+    width: 250px;
+  }
+  .App nav div .homePageButton {
+    width: 100px;
+    font-size: 1rem;
+  }
+  .App nav div .resultPageButton {
+    width: 150px;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 375px) {
+  .App nav div {
+    width: 200px;
+  }
+  .App nav div .homePageButton {
+    width: 80px;
+    font-size: 0.8rem;
+  }
+  .App nav div .resultPageButton {
+    width: 120px;
+    font-size: 0.8rem;
+  }
+}/*# sourceMappingURL=styles.css.map */
